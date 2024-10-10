@@ -19,10 +19,8 @@ export default class MyPlugin extends Plugin {
 		// This creates an icon in the left ribbon.
 		const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (evt: MouseEvent) => {
 			// Called when the user clicks the icon.
-			const max = Math.floor(Math.random() * 6);
-			for (let i = 0; i < max; i++) {
-				new Notice('Meow ' + (i + 1));
-			}
+			const max = Math.ceil(Math.random() * 6);
+			new Notice('Meow ' + max);
 		});
 		// Perform additional things with the ribbon
 		ribbonIconEl.addClass('my-plugin-ribbon-class');
